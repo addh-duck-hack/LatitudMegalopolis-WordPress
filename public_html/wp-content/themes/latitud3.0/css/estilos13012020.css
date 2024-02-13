@@ -1,0 +1,904 @@
+@font-face {
+	font-family: "Helvetica";
+	src: url(fonts/HelveticaNeuBold.ttf)
+}
+@font-face {
+	font-family: "Nimbus";
+	src: url(fonts/NimbusRomNo9L-Reg.otf)
+}
+.oculto-lg{
+   display: none;
+}
+.oculto-xs{
+   display: block;
+}
+.oculto{
+  display: none;
+}
+.full-img{
+   width: 100%;
+   height: 100%;
+}
+.full-img-fo{
+   width: 70%;
+   height: 50px;
+}
+.barra-single{
+   margin-top: -20px;
+   margin-bottom: 20px;
+}
+.nav-principal{
+   background: black;
+   height: 50px;
+}
+.nav-principal a{
+   font-size: 25px;
+   font-family: bebas;
+}
+.nav-principal .dropdown-menu a{
+   font-size: 20px;
+}
+.menu-fixed {
+	position:fixed;
+	z-index:1000;
+	top:0;
+	/*max-width:1000px;*/
+	left:0;
+	width:100%;
+	box-shadow:0px 4px 3px rgba(0,0,0,.5);
+}
+.fecha h4{
+   font-size: 15px;
+}
+.icon-mov{
+   width: 30px;
+   border-radius: 50%;
+   transition: all 0.5s ease;
+   margin-left: 10px;
+}
+.icon-mov:hover{
+   width: 40px;
+}
+.margen-top{
+   margin-top: 10px;
+}
+.margen-top-movil{
+	margin-top: 0;
+}
+.marco{
+   border: 2px solid grey;
+}
+.pleca{
+   margin: 10px;
+}
+.columnistas{
+   height: 230px;
+   margin-left: 0;
+   margin-right: 0;
+   background: url('https://latitudmegalopolis.com/wp-content/uploads/2018/07/opiniones.jpg');
+   background-size: cover;
+}
+.columnistas div:first-child{
+   height: 45px;
+}
+.columnistas .columnista{
+   height: 185px;
+   transition: all 0.5s ease;
+   z-index: 2;
+   padding-left: 0;
+   padding-right: 0;
+}
+.columnistas .columnista:hover{
+   padding: 0;
+   height: 175px;
+}
+.principal, .secundario{
+   padding: 0;
+}
+.principal div{
+   height: 370px;
+}
+.principal .addthis_tool{
+	display: none;
+}
+.principal p iframe{
+   width: 100%;
+   height: 370px;
+}
+.contSecundario{
+   height: 370px;
+   margin-left: 10px;
+   background: rgba(30,30,30, 0.9);
+   overflow: scroll;
+}
+.contSecundario .row{
+   margin-left: 10px;
+   margin-right: 10px;
+   padding-top: 15px;
+   border-bottom: 3px solid red;
+   transition: all 0.3s ease;
+}
+.contSecundario .rowEntretenimiento{
+   border-bottom: 3px solid teal;
+}
+.contSecundario .rowDeportes{
+   border-bottom: 3px solid green;
+}
+.contSecundario .row:first-child{
+	display: none;
+}
+.contSecundario .row div{
+   padding: 0;
+}
+.contSecundario .row:hover{
+   cursor: pointer;
+   background: rgba(255,255,255,0.1);
+}
+.contSecundario .row div h5{
+   padding-left: 10px;
+   color: white;
+   font-family: bebas;
+   font-size: 20px;
+}
+.entrevista{
+  background: url('../resources/fondo-entrevista2.jpg');
+  background-size: cover;
+  margin-left: 0;
+  margin-right: 0;
+}
+.entrevista .col-lg-10{
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.contador{
+  height: 80px;
+	background: rgba(113,0,0,1);
+  margin-left: 15px;
+}
+.contador h3{
+    font-family: bebas;
+    font-size: 23px;
+    text-align: center;
+    color: rgba(182,84,47,1);
+    margin-bottom: 5px;
+}
+.contador ul{
+    font-size: 22px;
+    color: white;
+    margin-left: 20%;
+}
+
+.clima{
+   background-image: url(https://latitudmegalopolis.com/wp-content/themes/latitud3.0/resources/clima.gif);
+   background-size: cover;
+   height: 80px;
+   margin-left: 55px;
+}
+.clima-item{
+  font-family: 'Merriweather Sans', sans-serif;
+  height: 80px;
+  padding-top:10px;
+  background-color: rgba(0,0,0,0.25);
+  text-shadow: 1px 1px 0 #FFF,
+              -1px -1px 0 #FFF,
+              1px -1px 0 #FFF,
+              -1px 1px 0 #FFF,
+              1px 1px 0 #FFF;
+}
+.clima-item h5{
+  text-align: center;
+}
+.div-cir div{
+  font-family: 'Merriweather Sans', sans-serif;
+  height: 60px;
+  text-shadow: 1px 1px 0 #FFF,
+              -1px -1px 0 #FFF,
+              1px -1px 0 #FFF,
+              -1px 1px 0 #FFF,
+              1px 1px 0 #FFF;
+}
+.item-div img{
+  position: absolute;
+  left: 15px;
+  top: 0px;
+  z-index: -1;
+  width: 97%
+}
+.item-div div{
+  height: 30px;
+}
+.item-div1{
+  padding-top: 17px;
+  padding-left: 110px;
+}
+.item-div4{
+  padding-top: 8px;
+  padding-left: 110px;
+}
+.item-div2{
+  padding-top: 20px;
+  padding-left: 40px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.item-div3{
+  padding-top: 10px;
+  padding-left: 40px;
+  font-size: 14px;
+  font-weight: 700;
+}
+/* .item-div{
+  background-image: url(https://latitudmegalopolis.com/wp-content/themes/latitud3.0/resources/divisas.gif);
+}
+.item-cir{
+  background-image: url(https://latitudmegalopolis.com/wp-content/themes/latitud3.0/resources/no_circula2.gif);
+} */
+
+/* .clima .full-img{
+   position: absolute;
+   z-index: -1;
+}
+.clima h1{
+   color: white;
+   text-shadow:-1px -1px 0 #000,
+               1px -1px 0 #000,
+               -1px 1px 0 #000,
+               1px 1px 0 #000;
+   font-family: bebas;
+   font-size: 50px;
+   margin-top: 10px;
+}
+.clima .row{
+   margin-bottom: 10px;
+}
+.clima .row:first-child{
+   margin-bottom: 0;
+}
+.clima .row .col-6{
+   padding-left: 5px;
+}
+.clima h5{
+   font-size: 17px;
+} */
+
+.juridico{
+   padding: 0;
+}
+.padding-off{
+   padding: 0;
+}
+.h200{
+   height: 200px;
+}
+.h300{
+   height: 300px;
+}
+.h400{
+   height: 400px;
+}
+.punto-rojo{
+   height:415px;
+}
+.borde-rojo{
+   border-bottom: 3px solid red;
+}
+.single-compartir{
+   margin-left: 150px;
+   margin-right: 150px;
+   border-bottom: 2px solid red;
+   font-size: 23px;
+   padding-bottom: 5px;
+}
+.borde-rojo a{
+   color: black;
+}
+.borde-rojo h2, .borde-rosa h1, .borde-azul h1, .borde-azul h1, .borde-verde h1, .borde-naranja h1{
+   font-family: 'Helvetica';
+   font-weight: bold;
+	font-size: 30px;
+}
+.borde-lima h1{
+   font-family: 'Helvetica';
+   font-weight: bold;
+   font-size: 65px;
+   margin-bottom: 0;
+   margin-top: 10px;
+   line-height: 50px;
+}
+.borde-azul1{
+  border-top: 3px solid #163EFF;
+  border-bottom: 3px solid #163EFF;
+}
+
+.borde-azul1 h1{
+   font-family: 'Helvetica';
+   font-weight: bold;
+   font-size: 65px;
+   margin-bottom: 0;
+   margin-top: 10px;
+   line-height: 50px;
+ 	color: #163EFF;
+}
+.borde-rojo p{
+   font-size: 20px;
+   font-family: 'Nimbus';
+}
+.borde-rosa{
+   border-bottom: 3px solid purple;
+}
+.borde-rosa a{
+   color: purple;
+}
+.borde-rosa p, .borde-azul p, .borde-verde p, .borde-naranja p{
+   font-size: 25px;
+   font-family: 'Nimbus';
+}
+.margen-off-left{
+   padding-left: 5px;
+}
+.margen-off-right{
+   padding-right: 5px;
+}
+.borde-naranja{
+   border-bottom: 3px solid #7AB5FF;
+}
+.borde-naranja a{
+   color: #7AB5FF;
+}
+
+.borde-azul{
+   border-bottom: 3px solid teal;
+}
+.borde-azul a{
+   color: teal;
+}
+.borde-verde{
+   border-bottom: 3px solid green;
+}
+.borde-verde a{
+   color: green;
+}.borde-lima{
+  border-top: 3px solid #B4C450;
+  border-bottom: 3px solid #B4C450;
+}
+.borde-lima h1{
+  color: #B4C450;
+}
+.menu-footer{
+   background: rgba(200,200,200,0.5);
+}
+.menu-footer div p{
+   font-size: 12px;
+}
+.menu-footer-div{
+   width: 100%;
+}
+.menu-footer-div ul{
+   list-style: none;
+   text-align: center;
+   border-bottom: 2px solid grey;
+   margin-left: 250px;
+   margin-right: 250px;
+}
+.menu-footer-div ul li{
+   display: inline-block;
+   height: 30px;
+   padding: 10px;
+   margin: 10px;
+}
+.footer-comment p{
+   margin-left: 250px
+}
+/* Estilos del titulo del single.php */
+.contenido-titulo{
+  font-size: 40px;
+  padding-top: 5px;
+}
+.l-titulo{
+  display: block;
+}
+/*Estilos del single.php*/
+.contenido-texto, .c-directorio{
+  border: 1px solid darkgray;
+  background: rgba(250,250,250,0.7);
+  padding: 40px;
+}
+.contenido-texto p:first-of-type::first-letter{
+   font-size: 5em;
+   font-family: serif;
+   margin-right: 30px;
+   margin-top: -27px;
+   float: left;
+}
+.contenido-texto p, .c-directorio p{
+ text-align: justify;
+ font-size: 25px;
+ font-family: 'Nimbus';
+}
+.contenido-texto p a img, .c-directorio p a img{
+  border: 10px solid white;
+}
+.contenido-texto h1, .c-directorio h1{
+  border-top: 2px solid red;
+  border-bottom: 2px solid red;
+  font-style: italic;
+  padding: 35px;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+.c-directorio{
+  margin-top: 50px;
+}
+.c-directorio h1{
+  border-bottom: 3px solid #DE0000;
+  margin-bottom: 30px;
+  font-family: initial;
+}
+.cont-titulo{
+  background: rgb(240,240,240);
+}
+.l-titulo{
+  width: 40px;
+  opacity: 0.8;
+}
+.contenido-titulo{
+   font-family: 'Helvetica';
+   font-weight: bold;
+}
+.bb-negro{
+  border-bottom: 2px solid black;
+  border-top: 2px solid black
+}
+.bb-rojo{
+  border-bottom: 2px solid red;
+  border-top: 2px solid red;
+}
+.bb-lima{
+  border-bottom: 2px solid #B4C450;
+  border-top: 2px solid #B4C450;
+}
+.bb-marron{
+  border-bottom: 2px solid brown;
+  border-top: 2px solid brown;
+}
+.bb-rosa{
+  border-bottom: 2px solid purple;
+  border-top: 2px solid purple;
+}
+.bb-gris{
+  border-bottom: 2px solid rgb(150,150,150);
+  border-top: 2px solid rgb(150,150,150);
+}
+.bb-amarillo{
+  border-bottom: 2px solid #ea8a13;
+  border-top: 2px solid #ea8a13;
+}
+.bb-militar{
+  border-bottom: 2px solid darkgreen;
+  border-top: 2px solid darkgreen;
+}
+.bb-azul{
+  border-bottom: 2px solid teal;
+  border-top: 2px solid teal;
+}
+.bb-verde{
+  border-bottom: 2px solid green;
+  border-top: 2px solid green;
+}
+.titulo-rosa{
+   color: #FF8DD2;
+}
+.contenido-autor{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.contenido-autor a{
+  color: rgb(150,150,150);
+}
+.contenido-texto p a img, .c-directorio p a img{
+	max-width: 100%;
+	height: auto;
+}
+.contenido-texto p strong, .c-directorio p strong{
+   font-size: larger;
+}
+.contenido-texto img.alignleft, .c-directorio img.alignleft{
+   float: left;
+   margin: 0.5em 1em 0.5em 0;
+}
+.contenido-texto img.alignright, .c-directorio img.alignright{
+   float: right;
+   margin: 0.5em 0 0.5em 1em;
+}
+.contenido-texto img.aligncenter, .c-directorio img.aligncenter{
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+.contenido-texto p iframe, .c-directorio p iframe{
+   max-width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   display: block;
+}
+
+/*Estilos para dispositivos lg*/
+@media (max-width: 1200px) {
+
+}
+
+/*Estilos para dispositivos md*/
+@media (max-width: 992px) {
+   .nav-principal{
+      height: 65px;
+   }
+   .navbar-collapse{
+      z-index: 2;
+   }
+   .navbar-collapse ul, .navbar-collapse form{
+      width: 60%;
+      background: #343a40;
+      margin-left: -16px;
+   }
+   .navbar-collapse ul li{
+      margin-left: 20px;
+   }
+   .navbar-collapse form.my-2{
+      margin-top: 0 !important;
+   }
+   .navbar-collapse form{
+      padding-left: 10px;
+      padding-top: 5px;
+      padding-bottom: 10px;
+   }
+
+   .principal p iframe,.principal div{
+      height: 250px;
+   }
+   .contSecundario{
+      height: 250px;
+   }
+   .sidebar{
+      display: none;
+   }
+   .punto-rojo{
+      height:294px;
+   }
+   .h300{
+      height: 200px;
+   }
+   .h300 p{
+      font-size: 19px;
+   }
+   .h400{
+      height: 250px;
+   }
+	.borde-rojo h2, .borde-rosa h1, .borde-azul h1, .borde-azul h1, .borde-verde h1, .borde-lima h1, .borde-purpura h1, .borde-naranja h1{
+	font-size: 28px;
+   }
+   .l-titulo{
+     display: block;
+   }
+   .contenido-texto h1, .c-directorio h1{
+     font-size: 30px;
+     padding: 10px;
+   }
+   .menu-footer-div ul{
+      margin-left: 0px;
+      margin-right: 0px;
+   }
+   .footer-comment p{
+      margin-left: 0px;
+      align-content: center;
+   }
+   .single-compartir{
+      margin-left: 0px;
+      margin-right: 0px;
+      font-size: 15px;
+   }
+   .item-div{
+      margin-bottom: 10px;
+   }
+   .item-div img{
+      width: 96%;
+   }
+   .item-div1{
+   padding-left: 170px;
+   }
+   .item-div4{
+   padding-left: 170px;
+   }
+   .contador{
+      margin-left: 0px;
+      margin-bottom: 10px;
+   }
+   .contador ul{
+       margin-left: 30%;
+   }
+   .clima{
+      margin-left: 0px;
+   }
+}
+
+/*Estilos para dispositivos sm*/
+@media (max-width: 768px) {
+	.margen-top-movil{
+		margin-top: 10px;
+	}
+   .nav-principal{
+      height: 65px;
+   }
+   .navbar-collapse{
+      z-index: 2;
+   }
+   .navbar-collapse ul, .navbar-collapse form{
+      width: 60%;
+      background: #343a40;
+      margin-left: -16px;
+   }
+   .navbar-collapse ul li{
+      margin-left: 20px;
+   }
+   .navbar-collapse form.my-2{
+      margin-top: 0 !important;
+   }
+   .navbar-collapse form{
+      padding-left: 10px;
+      padding-top: 5px;
+      padding-bottom: 10px;
+   }
+   .fecha{
+      display: none;
+   }
+   .principal p iframe,.principal div{
+      height: 300px;
+   }
+   .contSecundario{
+      margin: 0;
+   }
+   .entrevista .col-lg-10{
+     padding: 0;
+   }
+   .columnistas{
+      height: 410px;
+      background: url('https://latitudmegalopolis.com/wp-content/uploads/2018/07/n-opiniones-movil.jpg');
+      background-size: cover;
+   }
+   .columnistas div:first-child{
+      height: 140px;
+   }
+   .columnistas .columnista{
+      height: 130px;
+   }
+   .columnistas .columnista:hover{
+      height: 140px;
+   }
+   .sidebar{
+      display: none;
+   }
+   .oculto-xs{
+      display: none;
+   }
+   .oculto-lg{
+      display: block;
+   }
+   .h300{
+      height: 230px;
+   }
+   .borde-rojo h2, .borde-rosa h1, .borde-azul h1, .borde-azul h1, .borde-verde h1, .borde-lima h1, .borde-purpura h1, .borde-naranja h1{
+	font-size: 25px;
+}
+   .h200 p,.h300 p, .h400 p{
+      font-size: 22px;
+   }
+   .h400{
+      height: 180px;
+   }
+   .menu-footer .menu{
+      padding: 0;
+   }
+   .menu-footer .menu li{
+      margin: 0;
+   }
+   .contenido-autor{
+      font-size: 20px;
+   }
+	.margen-off-left{
+   padding-left: 15px;
+   }
+   .margen-off-right{
+      padding-right: 15px;
+   }
+   .menu-footer div p{
+      font-size: 9px;
+   }
+   .contenido-titulo{
+     font-size: 35px;
+   }
+   .l-titulo{
+     display: block;
+   }
+   .contenido-texto h1, .c-directorio h1{
+     font-size: 28px;
+     padding: 10px;
+   }
+   .menu-footer-div ul{
+      margin-left: 0px;
+      margin-right: 0px;
+   }
+   .footer-comment p{
+      margin-left: 0px;
+      align-content: center;
+   }
+   .single-compartir{
+      margin-left: 0px;
+      margin-right: 0px;
+      font-size: 15px;
+   }
+
+   .contador h3{
+       font-size: 28px;
+   }
+   .contador ul{
+       font-size: 25px;
+       color: white;
+       margin-left: 30%;
+   }
+   .clima-item-6 h5,.clima-item-6 div{
+      display: none;
+   }
+   .item-div img{
+      width: 94%;
+   }
+   .item-div1, .item-div4{
+      padding-left: 130px;
+   }
+   .item-div1 h5, .item-div4 h5{
+      font-size: 1.2rem
+   }
+}
+
+/*Estilos para dispositivos xs*/
+@media (max-width: 576px) {
+   .nav-principal{
+      height: 45px;
+   }
+   .navbar-collapse{
+      z-index: 2;
+   }
+   .navbar-collapse ul, .navbar-collapse form{
+      width: 60%;
+      background: #343a40;
+      margin-left: -16px;
+   }
+   .navbar-collapse ul li{
+      margin-left: 20px;
+   }
+   .navbar-collapse form.my-2{
+      margin-top: 0 !important;
+   }
+   .navbar-collapse form{
+      padding-left: 10px;
+      padding-top: 5px;
+      padding-bottom: 10px;
+   }
+   .fecha{
+      display: none;
+   }
+   .columnistas{
+      height: 300px;
+   }
+   .columnistas div:first-child{
+      height: 90px;
+   }
+   .columnistas .columnista{
+      height: 100px;
+   }
+   .columnistas .columnista:hover{
+      height: 110px;
+   }
+   .principal p iframe,.principal div{
+      height: 250px;
+   }
+   .contSecundario{
+      margin: 0;
+   }
+   .sidebar{
+      display: none;
+   }
+   .oculto-xs{
+      display: none;
+   }
+   .oculto-lg{
+      display: block;
+   }
+   .h300{
+      height: 200px;
+   }
+   .borde-rojo h2, .borde-rosa h1, .borde-azul h1, .borde-azul h1, .borde-verde h1, .borde-lima h1, .borde-purpura h1, .borde-azul1 h1, .borde-naranja h1{
+   font-size: 22px;
+   }
+   .h200 p,.h300 p, .h400 p{
+      font-size: 17px;
+   }
+   .h400{
+      height: 150px;
+   }
+   .menu-footer .menu{
+      padding: 0;
+   }
+   .menu-footer .menu li{
+      margin: 0;
+   }
+   .contenido-titulo{
+     font-size: 30px;
+   }
+   .l-titulo{
+     display: none;
+   }
+   .contenido-texto, .c-directorio{
+     padding: 25px;
+   }
+   .contenido-texto p, .c-directorio p{
+     font-size: 20px;
+   }
+   .c-directorio h1 {
+   	font-size: 30px;
+   }
+   .s-reportaje{
+   	margin-top: 15px;
+   	padding-bottom: 15px;
+   	border-bottom: 2px solid #FF7624;
+   }
+   .contenido-texto h1, .c-directorio h1{
+    font-size: 25px;
+    padding: 10px;
+   }
+   .menu-footer-div ul{
+     margin-left: 0px;
+     margin-right: 0px;
+   }
+   .footer-comment p{
+     margin-left: 0px;
+     align-content: center;
+   }
+   .single-compartir{
+     margin-left: 0px;
+     margin-right: 0px;
+     font-size: 15px;
+   }
+   .contador{
+    margin-left: 15px;
+    margin-right: 15px;
+   }
+   .contador h3{
+      font-size: 28px;
+   }
+   .contador ul{
+      font-size: 25px;
+      color: white;
+      margin-left: 30%;
+   }
+   .clima{
+     display: none;
+   }
+   .clima-item-5, .clima-item-6{
+     display: none;
+   }
+   .contador{
+    margin-left: 0px;
+    margin-right: 0px;
+   }
+   .item-div1, .item-div4{
+      padding-left: 70px;
+   }
+   .item-div1 h5, .item-div4 h5{
+      font-size: 1.2rem
+   }
+   .item-div img{
+      width: 92%;
+   }
+}
+/*Efecto disolucion para el carousel de bootstrap*/
