@@ -6,6 +6,8 @@ Template Name: Pagina principal
 <?php $nombre = "index.php"; ?>
 <?php get_header(); ?>
 <body>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v19.0" nonce="skzszTzP"></script>
 <div class="container">
    <?php
       require (TEMPLATEPATH. '/config/configs.php');
@@ -125,7 +127,7 @@ Template Name: Pagina principal
          <?php require 'carousel2.php'; ?>
       </div>
       <div class="col-12 col-md-3" style="padding-left: 0;">
-      <a class="twitter-timeline" data-width="235" data-height="415" href="https://twitter.com/Latitud_mx?ref_src=twsrc%5Etfw">Tweets by Latitud_mx</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+         <div class="fb-page" data-href="https://www.facebook.com/LatitudMegalopolis" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/LatitudMegalopolis" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/LatitudMegalopolis">Latitud Megalópolis</a></blockquote></div> 
       </div>
    </div>
    <div class="row margen-top">
