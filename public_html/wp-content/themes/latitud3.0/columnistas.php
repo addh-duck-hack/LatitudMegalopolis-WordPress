@@ -26,7 +26,7 @@ $img6 = $colum6[0]["foto_columnista"];
 ?>
 
 <div class="col-12 text-center" style="height: auto;">
-	<img class="full-img" src="https://latitudmegalopolis.com/wp-content/uploads/2020/11/analistas.jpeg">
+	<img class="full-img" src="https://latitudmegalopolis.com/wp-content/uploads/2024/06/WhatsApp-Image-2024-06-19-at-3.40.56-PM.jpeg">
 </div>
 <div class="col-4 col-md-2 columnista">
   <?php query_posts($query1)?>
