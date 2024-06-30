@@ -1,8 +1,8 @@
 <style type="text/css">
     .play-list{
         width: 100%;
-        background: black;
-        padding-top: 10px;
+        background-image: url('<?php bloginfo('template_url'); ?>/resources/background_videos.gif');
+        padding-top: 5em;
         padding-bottom: 40px;
         overflow: hidden;
     }
@@ -14,21 +14,16 @@
         margin-bottom: 15cyberpx
     }
     #contenedorPlay{
-        width: 165%;
-        display: flex;
-        margin-left: 0%;
+        width: 100%;
     }
     .item-play-list{
-        width: 30%;
-        margin-left: 3%;
+        width: 40%;
+        margin-left: 30%;
         border: 2px solid white;
         border-radius: 3px;
     }
     .item-play-list:hover{
         cursor: pointer;
-    }
-    .item-play-list:last-child{
-        margin-right: 3%;
     }
     .img-play-list{
         width: 100%;
@@ -135,6 +130,9 @@
         left: 0px;
         background: rgba(0,0,0,0.5)
     }
+    .addtoany_share_save_container{
+        display: none;
+    }
     @media (max-width: 992px) {
         .play-list{
             padding-top: 25px;
@@ -172,6 +170,7 @@
         .play-list{
             padding-top: 20px;
             padding-bottom: 20px;
+            background: #000000;
         }
         .img-play-list{
             height: 75px;
@@ -213,107 +212,39 @@
 </script>
 
 <div class="play-list oculto-xs">
-    <h1>VIDEOS</h1>
+    <h1></h1>
     <div class="cont-play-list" id="contenedorPlay">
         <?php query_posts('category_name=Videos')?><!--Para elegir categoria en slider-->
-            <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 6) : the_post(); ?>
+            <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 2) : the_post(); ?>
             <!--Codigo que se ejecutara cuando encuentre algun post-->
-            <div class="item-play-list" id="img-<?php echo $i;?>" <?php if($i == 5){echo "style='margin-right: 3%'";}?>>
-                <img src="<?php
-                    if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-                        the_post_thumbnail_url('full');
-                    }
-                ?>" class="img-play-list">
-                <div class="texto-play">
-                    <h6><?php the_title();?></h6>
-                </div>
+            <div class="item-play-list" id="img-<?php echo $i;?>">
+                <?php the_content()?>
             </div>
-            <div class="fondo-play" id="fondo-<?php echo $i;?>">
-                <div class="fondo2-play">
-                    <div class="video-play" id="video-play-<?php echo $i;?>">
-                        <div class="close-video" id="close-<?php echo $i;?>">
-                                <h4>x</h4>
-                        </div>
-                        <?php the_content()?>
-                    </div>
-                </div>
-            </div>
-            <?php
-                echo '<script type="text/javascript">$(document).ready(function(){
-                $("#img-'.$i.'").click(function(){
-                    $("#fondo-'.$i.'").fadeIn(1500);
-                });
-                $("#close-'.$i.'").click(function(){
-                    $("#fondo-'.$i.'").fadeOut(1500);
-                });
-                });</script>'
-            ?>
             <?php $i++; endwhile; else: ?>
             <!--Codigo que se ejecutara si no encuentra post-->
             <h1>Error 404 no se encontraron videos.</h1>
             <?php endif; ?>
         <?php wp_reset_query();?>
     </div>
-    <div class="left-flecha" id="leftPlay">
-        <h2>&#60;</h2>
-    </div>
-    <div class="right-flecha" id="rightPlay">
-        <h2>&#62;</h2>
-    </div>
 </div>
 <!--Carousel para los videos del movil-->
 <div class="play-list oculto-lg">
-    <h1>VIDEOS</h1>
+    <h1></h1>
     <div id="carouselNewPlaylist" class="carousel slide carousel-fade" data-ride="carousel">
-    <div class="carousel-inner">
-        <?php query_posts('category_name=Videos')?><!--Para elegir categoria en slider-->
-        <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 6) : the_post(); ?>
-        <!--Codigo que se ejecutara cuando encuentre algun post-->
-        <div class="carousel-item <?php if (($i-1) == 0): ?>
-            active
-        <?php endif; ?>" id="img-mov-<?php echo $i;?>">
-            <img class="d-block w-100" src="<?php
-                    if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-                        the_post_thumbnail_url('full');
-                    }
-                ?>">
-            <div class="carousel-caption d-md-block">
-                <h5><?php the_title(); ?></h5>
+        <div class="carousel-inner">
+            <?php query_posts('category_name=Videos')?><!--Para elegir categoria en slider-->
+            <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 2) : the_post(); ?>
+            <!--Codigo que se ejecutara cuando encuentre algun post-->
+            <div class="carousel-item <?php if (($i-1) == 0): ?>
+                active
+            <?php endif; ?>" id="img-mov-<?php echo $i;?>">
+                <?php the_content()?>
             </div>
+            <?php $i++; endwhile; else: ?>
+            <!--Codigo que se ejecutara si no encuentra post-->
+            <h1>Error 404 no se encontraron portadas.</h1>
+            <?php endif; ?>
+            <?php wp_reset_query();?>
         </div>
-        <div class="fondo-play" id="fondo-mov-<?php echo $i;?>">
-                <div class="fondo2-play">
-                    <div class="video-play" id="video-play-<?php echo $i;?>">
-                        <div class="close-video" id="close-mov-<?php echo $i;?>">
-                                <h4>x</h4>
-                        </div>
-                        <?php the_content()?>
-                    </div>
-                </div>
-            </div>
-            <?php
-                echo '<script type="text/javascript">$(document).ready(function(){
-                $("#img-mov-'.$i.'").click(function(){
-                    $("#fondo-mov-'.$i.'").fadeIn(1500);
-                });
-                $("#close-mov-'.$i.'").click(function(){
-                    $("#fondo-mov-'.$i.'").fadeOut(1500);
-                });
-                });</script>'
-            ?>
-        <?php $i++; endwhile; else: ?>
-        <!--Codigo que se ejecutara si no encuentra post-->
-        <h1>Error 404 no se encontraron portadas.</h1>
-        <?php endif; ?>
-        <?php wp_reset_query();?>
-    </div>
-    <a class="carousel-control-prev" href="#carouselNewPlaylist" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselNewPlaylist" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
     </div>
 </div>

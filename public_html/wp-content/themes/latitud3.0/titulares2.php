@@ -145,7 +145,7 @@
 </div>
 <?php require 'banner-publicidad9.php'; ?>
 <?php query_posts('category_name=entretenimiento')?><!--Para elegir categoria en slider-->
-<?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 4) : the_post(); ?>
+<?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 2) : the_post(); ?>
 <!--Codigo que se ejecutara cuando encuentre algun post-->
    <?php if ($i == 1): ?>
       <div class="row margen-top">
@@ -189,7 +189,7 @@
 
 <div class="row margen-top">
    <?php query_posts('category_name=entretenimiento')?><!--Para elegir categoria en slider-->
-   <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 4) : the_post(); ?>
+   <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 8) : the_post(); ?>
    <!--Codigo que se ejecutara cuando encuentre algun post-->
       <?php if ($i == 1): ?>
 
@@ -215,133 +215,6 @@
                <a href="<?php the_permalink();?>">...leer más.</a></p>
             </div>
             <div class="h300 borde-azul oculto-lg">
-               <a href="<?php the_permalink();?>">
-                  <h1 class="text-center"><?php the_title(); ?></h1>
-               </a>
-               <p class="text-justify"><?php $extracto = get_the_content() ;
-               $extracto = strip_tags($extracto);
-               echo substr($extracto, 0, 150); ?>
-               <a href="<?php the_permalink();?>">...leer más.</a></p>
-            </div>
-         </div>
-      <?php endif; ?>
-   <?php $i++; endwhile; else: ?>
-   <!--Codigo que se ejecutara si no encuentra post-->
-   <h1>Error 404 no se encontraron portadas.</h1>
-   <?php endif; ?>
-   <?php wp_reset_query();?>
-</div>
-<?php require 'banner-publicidad10.php'; ?>
-<?php query_posts('category_name=latitud-taurina')?><!--Para elegir categoria en slider-->
-<?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 2) : the_post(); ?>
-<!--Codigo que se ejecutara cuando encuentre algun post-->
-   <div class="row">
-      <div class="col-12">
-         <div class="h400">
-            <a href="<?php the_permalink();?>">
-               <img class="d-block full-img" src="
-              <?php
-                 if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-                   the_post_thumbnail_url('full');
-                 }
-              ?>">
-            </a>
-         </div>
-      </div>
-      <div class="col-12 borde-verde">
-         <a href="<?php the_permalink();?>">
-            <h1 class="text-center"><?php the_title(); ?></h1>
-         </a>
-         <div class="col-12 oculto-xs">
-         <p class="text-center" style="font-size: 25px;"><?php $extracto = get_the_content() ;
-         $extracto = strip_tags($extracto);
-         echo substr($extracto, 0, 150); ?>
-         <a href="<?php the_permalink();?>" style="color: green;">...leer más.</a></p>
-      </div>
-      <div class="col-12 h400 oculto-lg">
-         <p class="text-justify"><?php $extracto = get_the_content() ;
-         $extracto = strip_tags($extracto);
-         echo substr($extracto, 0, 150); ?>
-         <a href="<?php the_permalink();?>">...leer más.</a></p>
-      </div>
-      </div>
-   </div>
-<?php $i++; endwhile; else: ?>
-<!--Codigo que se ejecutara si no encuentra post-->
-<h1>Error 404 no se encontraron portadas.</h1>
-<?php endif; ?>
-<?php wp_reset_query();?>
-<?php query_posts('category_name=deportes')?><!--Para elegir categoria en slider-->
-<?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 2) : the_post(); ?>
-<!--Codigo que se ejecutara cuando encuentre algun post-->
-   <?php if ($i == 1): ?>
-      <div class="row margen-top">
-         <div class="col-12 col-md-6 h300">
-            <a href="<?php the_permalink();?>">
-               <img class="d-block full-img" src="
-              <?php
-                 if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-                   the_post_thumbnail_url('full');
-                 }
-              ?>">
-            </a>
-         </div>
-         <div class="col-12 col-md-6 h300 borde-verde oculto-xs">
-            <a href="<?php the_permalink();?>">
-               <h1 class="text-left"><?php the_title(); ?></h1>
-            </a>
-            <p class="text-left"><?php $extracto = get_the_content() ;
-            $extracto = strip_tags($extracto);
-            echo substr($extracto, 0, 150); ?>
-            <a href="<?php the_permalink();?>">...leer más.</a></p>
-         </div>
-         <div class="col-12 col-md-6 h300 borde-verde oculto-lg">
-            <a href="<?php the_permalink();?>">
-               <h1 class="text-center"><?php the_title(); ?></h1>
-            </a>
-            <p class="text-justify"><?php $extracto = get_the_content() ;
-            $extracto = strip_tags($extracto);
-            echo substr($extracto, 0, 150); ?>
-            <a href="<?php the_permalink();?>">...leer más.</a></p>
-         </div>
-      </div>
-   <?php else: ?>
-
-   <?php endif; ?>
-<?php $i++; endwhile; else: ?>
-<!--Codigo que se ejecutara si no encuentra post-->
-<h1>Error 404 no se encontraron portadas.</h1>
-<?php endif; ?>
-<?php wp_reset_query();?>
-
-<div class="row margen-top">
-   <?php query_posts('category_name=deportes')?><!--Para elegir categoria en slider-->
-   <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 6) : the_post(); ?>
-   <!--Codigo que se ejecutara cuando encuentre algun post-->
-      <?php if ($i == 1): ?>
-
-      <?php else: ?>
-         <div class="col-12 col-md-6">
-            <div class="h300">
-               <a href="<?php the_permalink();?>">
-                  <img class="d-block full-img" src="
-                 <?php
-                    if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-                      the_post_thumbnail_url('full');
-                    }
-                 ?>">
-               </a>
-            </div>
-            <div class="h300 borde-verde oculto-xs">
-               <a href="<?php the_permalink();?>">
-                  <h1 class="text-right"><?php the_title(); ?></h1>
-               </a>
-               <p class="text-right"><?php $extracto = get_the_content() ;
-               $extracto = strip_tags($extracto);
-               echo substr($extracto, 0, 150); ?>
-               <a href="<?php the_permalink();?>">...leer más.</a></p>
-            </div>
-            <div class="h300 borde-verde oculto-lg">
                <a href="<?php the_permalink();?>">
                   <h1 class="text-center"><?php the_title(); ?></h1>
                </a>
@@ -442,7 +315,7 @@
 
 <div class="row margen-top">
    <?php query_posts('category_name=deportes2')?><!--Para elegir categoria en slider-->
-   <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 5) : the_post(); ?>
+   <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 7) : the_post(); ?>
    <!--Codigo que se ejecutara cuando encuentre algun post-->
       <?php if ($i < 3): ?>
 

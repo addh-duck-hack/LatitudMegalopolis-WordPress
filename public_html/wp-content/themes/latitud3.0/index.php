@@ -116,11 +116,6 @@ Template Name: Pagina principal
    <?php require 'banner-publicidad3.php'; ?>
    <?php require 'estados.php'; ?>
    <?php require 'banner-publicidad13.php'; ?>
-   <div class="row margen-top">
-      <div class="col-12">
-         <?php require 'carousel-negocios.php'; ?>
-      </div>
-   </div>
    <?php require 'banner-publicidad4.php'; ?>
    <div class="row margen-top">
       <div class="col-12 col-md-9">
@@ -137,7 +132,7 @@ Template Name: Pagina principal
            $img = $data[0]['url_img'];
            $img;
          ?>
-          <img class="full-img" src="<?php echo $img; ?>" alt="">
+            <img class="full-img" src="<?php echo $img; ?>" alt="">
        </div>
     </div>
    <?php require 'titulares2.php'; ?>
