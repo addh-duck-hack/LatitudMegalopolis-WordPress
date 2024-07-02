@@ -1,7 +1,7 @@
 <style type="text/css">
     .play-list{
         width: 100%;
-        background-image: url('<?php bloginfo('template_url'); ?>/resources/background_videos.gif');
+        background-image: url('<?php bloginfo('template_url'); ?>/resources/background_videos.jpeg');
         padding-top: 5em;
         padding-bottom: 40px;
         overflow: hidden;

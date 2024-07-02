@@ -91,7 +91,7 @@
 <?php require 'banner-publicidad7.php'; ?>
 <div class="row justify-content-center">
    <?php query_posts('category_name=reportaje')?><!--Para elegir categoria en slider-->
-   <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 5) : the_post(); ?>
+   <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 7) : the_post(); ?>
    <!--Codigo que se ejecutara cuando encuentre algun post-->
 	<?php if ($i % 2 == 0): ?>
 	<div class="col-11 col-md-6 h300 margen-top margen-off-left s-reportaje">
@@ -231,6 +231,8 @@
    <?php endif; ?>
    <?php wp_reset_query();?>
 </div>
+<?php require 'banner-publicidad10.php'; ?>
+
 <?php query_posts('category_name=deportes2')?><!--Para elegir categoria en slider-->
 <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 2) : the_post(); ?>
 <!--Codigo que se ejecutara cuando encuentre algun post-->

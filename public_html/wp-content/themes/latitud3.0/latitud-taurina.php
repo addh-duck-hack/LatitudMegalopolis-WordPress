@@ -39,7 +39,7 @@ $arrayNegocios = getDataFromLimit($connection,"pagina_publicidad","id",12);
          <div class="row justify-content-center">
             <div class="col-7 col-md-4 margen-top" style="margin-bottom: 10px;">
                <a href="https://latitudmegalopolis.com/latitud-taurina/">
-                  <img class="full-img" src="https://latitudmegalopolis-com.digitalserver.io/wp-content/themes/latitud3.0/resources/latitud_taurina.png" alt="">
+                  <img class="full-img" src="https://latitudmegalopolis-com.digitalserver.io/wp-content/themes/latitud3.0/resources/latitud_taurina3.jpg" alt="">
                </a>
             </div>
             <!-- <div class="col-4">
@@ -47,24 +47,13 @@ $arrayNegocios = getDataFromLimit($connection,"pagina_publicidad","id",12);
             </div> -->
          </div>
          <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-principal">
-            <a class="navbar-brand" href="http://latitudmegalopolis.com/">INICIO</a>
+            <a class="navbar-brand" href="#">Director Carlos Yarza</a>
            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
              <span class="navbar-toggler-icon"></span>
            </button>
 
            <div class="collapse navbar-collapse" id="navbarSupportedContent">
              <ul class="navbar-nav mr-auto">
-               <!--<li class="nav-item dropdown">
-                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CATEGORIAS
-                 </a>
-                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                     <?php
-                        foreach($categoriasArre as $categoria){
-                            echo '<a class="dropdown-item" href="https://latitudmegalopolis.com/red-negocios?categoria='.$categoria['name'].'">'.$categoria['name'].'</a>';
-                        }
-                     ?>
-                 </div>
-              </li>-->
               <li class="nav-item" style="position: absolute;margin-left: 55%;">
                 <a href="#" class="nav-link" id="fecha" style="margin-top: -19px;"></a>
               </li>
