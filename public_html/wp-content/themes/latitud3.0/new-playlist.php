@@ -25,6 +25,15 @@
     .item-play-list:hover{
         cursor: pointer;
     }
+    .item-play-list>p{
+        width: 100%;
+        height: 100%;
+        margin-bottom: 0;
+    }
+    .item-play-list>p>iframe{
+        width: 100%;
+        height: 12em;
+    }
     .img-play-list{
         width: 100%;
         height: 150px;
