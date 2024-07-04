@@ -34,6 +34,9 @@
         width: 100%;
         height: 12em;
     }
+    .carousel-item>p>iframe{
+        width: 100%;
+    }
     .img-play-list{
         width: 100%;
         height: 150px;
@@ -244,9 +247,7 @@
             <?php query_posts('category_name=Videos')?><!--Para elegir categoria en slider-->
             <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 2) : the_post(); ?>
             <!--Codigo que se ejecutara cuando encuentre algun post-->
-            <div class="carousel-item <?php if (($i-1) == 0): ?>
-                active
-            <?php endif; ?>" id="img-mov-<?php echo $i;?>">
+            <div class="carousel-item active" id="img-mov-<?php echo $i;?>">
                 <?php the_content()?>
             </div>
             <?php $i++; endwhile; else: ?>
