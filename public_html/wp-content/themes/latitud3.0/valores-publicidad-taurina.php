@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Pagina Valores Publicidad
+Template Name: Pagina Valores Publicidad Taurina
 */
 ?>
 <?php
@@ -16,7 +16,7 @@ if (!$con2) {
 }
 $publicidadID = $_GET["publicidadID"];
 if ($publicidadID > 0) {
-   $publicidadArre = getDataFromWhere($con2,"publicidad","posicion_publicidad",$publicidadID);
+   $publicidadArre = getDataFromWhere($con2,"publicidad_taurina","posicion",$publicidadID);
 }
 ?>
 <?php get_header(); ?>
@@ -26,10 +26,10 @@ if ($publicidadID > 0) {
          <div class="col-12" style="padding:20px;border:2px solid grey;">
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                <h3 class="text-center">Editar Publicidad</h3>
-               <h5>El siguiente formulario sirve para cambiar la publicidad <br>Instrucciones:</h5>
+               <h5>El siguiente formulario sirve para cambiar la publicidad de latitud taurina<br>Instrucciones:</h5>
                <h6><ol>
                    <li>Seleccionar el lugar donde se va a incluir la publicidad</li>
-                   <li>Colocar la URL de la imagen de la publicidad (970 X 200 pixeles)</li>
+                   <li>Colocar la URL de la imagen de la publicidad</li>
                    <li>Colocar el link a donde va a llevar la publicidad, en caso de no ir a ningun lado colocar #</li>
                </ol></h6>
                <br>
@@ -38,25 +38,8 @@ if ($publicidadID > 0) {
                    <label for="posicionID">Seleccione en donde se va a colocar la publicidad</label><br>
                    <select name="posicionID" id="posicionID" class="custom-select">
                        <option value="0" selected>Posición publicidad</option>
-                       <option value="11">Principal</option>
-                       <option value="1">Latitud TV</option>
-                       <option value="2">Megalópolis</option>
-                       <option value="3">Estados</option>
-                       <option value="4">Contra portada</option>
-                       <option value="5">Tinta rosa</option>
-                       <option value="6">Gotas</option>
-                       <option value="7">Reportajes</option>
-                       <option value="8">Cultura</option>
-                       <option value="9">Entretenimiento</option>
-                       <option value="10">Deportes</option>
-                       <option value="12">Cocina</option>
-                       <option value="13">Negocios</option>
-                       <option value="14">Publicidad 1</option>
-                       <option value="15">Publicidad 2</option>
-                       <option value="16">Publicidad 3</option>
-                       <option value="17">Publicidad 4</option>
-                       <option value="18">Publicidad 5</option>
-                       <option value="19">Latitud Taurina</option>
+                       <option value="1">Carousel de notas + publicidad</option>
+                       <option value="2">Carousel solo publicidad de toros</option>
                    </select><br><br>
                    <label for="valorImg">URL de la imagen publicidad</label>
                    <input type="text" class="form-control" id="valorImg" style="width:80%;" placeholder="https://latitudmegalopolis.com/wp-content/uploads/2019/07/IMG-20190727-WA0001.jpg">
@@ -97,60 +80,12 @@ if ($publicidadID > 0) {
                 <option value="0" <?php if ($publicidadID == 0 || !isset($publicidadID)) {
                    echo "selected";
                 } ?>>Posición publicidad</option>
-                <option value="11" <?php if ($publicidadID == 1) {
-                   echo "selected";
-                } ?>>Principal</option>
                 <option value="1" <?php if ($publicidadID == 1) {
                    echo "selected";
-                } ?>>Latitud TV</option>
-                <option value="2" <?php if ($publicidadID == 2) {
+                } ?>>Carousel de notas + publicidad</option>
+                <option value="2" <?php if ($publicidadID == 1) {
                    echo "selected";
-                } ?>>Megalópolis</option>
-                <option value="3" <?php if ($publicidadID == 3) {
-                   echo "selected";
-                } ?>>Estados</option>
-                <option value="4" <?php if ($publicidadID == 4) {
-                   echo "selected";
-                } ?>>Contra portada</option>
-                <option value="5" <?php if ($publicidadID == 5) {
-                   echo "selected";
-                } ?>>Tinta rosa</option>
-                <option value="6" <?php if ($publicidadID == 6) {
-                   echo "selected";
-                } ?>>Gotas</option>
-                <option value="7" <?php if ($publicidadID == 7) {
-                   echo "selected";
-                } ?>>Reportajes</option>
-                <option value="8" <?php if ($publicidadID == 8) {
-                   echo "selected";
-                } ?>>Cultura</option>
-                <option value="9" <?php if ($publicidadID == 9) {
-                   echo "selected";
-                } ?>>Entretenimiento</option>
-                <option value="10" <?php if ($publicidadID == 10) {
-                   echo "selected";
-                } ?>>Deportes</option>
-                <option value="12" <?php if ($publicidadID == 12) {
-                   echo "selected";
-                } ?>>Cocina</option>
-                <option value="13" <?php if ($publicidadID == 12) {
-                   echo "selected";
-                } ?>>Negocios</option>
-                <option value="14" <?php if ($publicidadID == 12) {
-                   echo "selected";
-                } ?>>Publicidad 1</option>
-                <option value="15" <?php if ($publicidadID == 12) {
-                   echo "selected";
-                } ?>>Publicidad 2</option>
-                <option value="16" <?php if ($publicidadID == 12) {
-                   echo "selected";
-                } ?>>Publicidad 3</option>
-                <option value="17" <?php if ($publicidadID == 12) {
-                   echo "selected";
-                } ?>>Publicidad 4</option>
-                <option value="18" <?php if ($publicidadID == 12) {
-                   echo "selected";
-                } ?>>Publicidad 5</option>
+                } ?>>Carousel solo publicidad de toros</option>
             </select>
             <div id="respuestaEdit"></div>
             <br><br>
@@ -170,7 +105,7 @@ if ($publicidadID > 0) {
                           $activar = "";
                           $desactivar = "";
                           $eliminar = "";
-                          switch ($publicidad['estatus_publicidad']) {
+                          switch ($publicidad['estatus']) {
                              case 200:
                                 $activar = "disabled";
                                 break;
@@ -182,36 +117,36 @@ if ($publicidadID > 0) {
                                break;
                           }
                            echo '<tr class="text-center">
-                                    <th scope="row">'.$publicidad['id_publicidad'].'</th>
-                                    <td><img src="'.$publicidad['img_publicidad'].'" width="250px"></td>
-                                    <td><a href="'.$publicidad['url_publicidad'].'">'.$publicidad['url_publicidad'].'</a></td>
+                                    <th scope="row">'.$publicidad['id'].'</th>
+                                    <td><img src="'.$publicidad['img'].'" width="250px"></td>
+                                    <td><a href="'.$publicidad['url'].'">'.$publicidad['url'].'</a></td>
                                     <td>
-                                       <button type="button" id="activar'.$publicidad['id_publicidad'].'" class="btn btn-success btn-sm" '.$activar.'>Activar</button>
-                                       <button type="button" id="desactivar'.$publicidad['id_publicidad'].'" class="btn btn-warning btn-sm" '.$desactivar.'>Desactivar</button>
-                                       <button type="button" id="eliminar'.$publicidad['id_publicidad'].'" class="btn btn-danger btn-sm" '.$eliminar.'>Eliminar</button>
+                                       <button type="button" id="activar'.$publicidad['id'].'" class="btn btn-success btn-sm" '.$activar.'>Activar</button>
+                                       <button type="button" id="desactivar'.$publicidad['id'].'" class="btn btn-warning btn-sm" '.$desactivar.'>Desactivar</button>
+                                       <button type="button" id="eliminar'.$publicidad['id'].'" class="btn btn-danger btn-sm" '.$eliminar.'>Eliminar</button>
                                     </td>
                                  </tr>
                                  <script type="text/javascript">
-                                 $("#activar'.$publicidad['id_publicidad'].'").click(function(){
-                                     $("#activar'.$publicidad['id_publicidad'].'").attr("disabled",true);
-                                     $("#desactivar'.$publicidad['id_publicidad'].'").attr("disabled",false);
-                                     $("#eliminar'.$publicidad['id_publicidad'].'").attr("disabled",false);
+                                 $("#activar'.$publicidad['id'].'").click(function(){
+                                     $("#activar'.$publicidad['id'].'").attr("disabled",true);
+                                     $("#desactivar'.$publicidad['id'].'").attr("disabled",false);
+                                     $("#eliminar'.$publicidad['id'].'").attr("disabled",false);
                                      $("#respuestaEdit").html("<img src=\'https://api.latitudmegalopolis.com/functions/cargando.gif\'>");
-                                     $.get("https://api.latitudmegalopolis.com/functions/valores.php",{keycode: "EDITPUBLICIDAD", id: '.$publicidad['id_publicidad'].', estatus: 200}, respuestaEditar, "json");
+                                     $.get("https://api.latitudmegalopolis.com/functions/valores.php",{keycode: "EDITPUBLICIDADTAURINA", id: '.$publicidad['id'].', estatus: 200}, respuestaEditar, "json");
                                   });
-                                  $("#desactivar'.$publicidad['id_publicidad'].'").click(function(){
-                                     $("#activar'.$publicidad['id_publicidad'].'").attr("disabled",false);
-                                     $("#desactivar'.$publicidad['id_publicidad'].'").attr("disabled",true);
-                                     $("#eliminar'.$publicidad['id_publicidad'].'").attr("disabled",false);
+                                  $("#desactivar'.$publicidad['id'].'").click(function(){
+                                     $("#activar'.$publicidad['id'].'").attr("disabled",false);
+                                     $("#desactivar'.$publicidad['id'].'").attr("disabled",true);
+                                     $("#eliminar'.$publicidad['id'].'").attr("disabled",false);
                                      $("#respuestaEdit").html("<img src=\'https://api.latitudmegalopolis.com/functions/cargando.gif\'>");
-                                     $.get("https://api.latitudmegalopolis.com/functions/valores.php",{keycode: "EDITPUBLICIDAD", id: '.$publicidad['id_publicidad'].', estatus: 201}, respuestaEditar, "json");
+                                     $.get("https://api.latitudmegalopolis.com/functions/valores.php",{keycode: "EDITPUBLICIDADTAURINA", id: '.$publicidad['id'].', estatus: 201}, respuestaEditar, "json");
                                    });
-                                   $("#eliminar'.$publicidad['id_publicidad'].'").click(function(){
-                                      $("#activar'.$publicidad['id_publicidad'].'").attr("disabled",false);
-                                      $("#desactivar'.$publicidad['id_publicidad'].'").attr("disabled",false);
-                                      $("#eliminar'.$publicidad['id_publicidad'].'").attr("disabled",true);
+                                   $("#eliminar'.$publicidad['id'].'").click(function(){
+                                      $("#activar'.$publicidad['id'].'").attr("disabled",false);
+                                      $("#desactivar'.$publicidad['id'].'").attr("disabled",false);
+                                      $("#eliminar'.$publicidad['id'].'").attr("disabled",true);
                                       $("#respuestaEdit").html("<img src=\'https://api.latitudmegalopolis.com/functions/cargando.gif\'>");
-                                      $.get("https://api.latitudmegalopolis.com/functions/valores.php",{keycode: "EDITPUBLICIDAD", id: '.$publicidad['id_publicidad'].', estatus: 202}, respuestaEditar, "json");
+                                      $.get("https://api.latitudmegalopolis.com/functions/valores.php",{keycode: "EDITPUBLICIDADTAURINA", id: '.$publicidad['id'].', estatus: 202}, respuestaEditar, "json");
                                    });
                                  </script>';
                        }
@@ -239,7 +174,7 @@ $("#newPublicidad").click(function(){
   }else {
     $("#newPublicidad").attr("disabled",true)
     $("#imgCargando").html("<img src='https://api.latitudmegalopolis.com/functions/cargando.gif'>");
-    $.get("https://api.latitudmegalopolis.com/functions/valores.php",{keycode: "ADDPUBLICIDAD", posicion: $("#posicionID").val(), url: $("#valorUrl").val(), img: $("#valorImg").val()}, muestraMensaje, "json");
+    $.get("https://api.latitudmegalopolis.com/functions/valores.php",{keycode: "ADDPUBLICIDADTAURINA", posicion: $("#posicionID").val(), url: $("#valorUrl").val(), img: $("#valorImg").val()}, muestraMensaje, "json");
   }
  });
 
@@ -272,6 +207,6 @@ function respuestaEditar(respuesta){
 
 //Funcion para detectar el cambio en el spinner
 $("#posicionEditar").change(function(){
-            window.location.href = "http://latitudmegalopolis.com/valores-publicidad?publicidadID=" + $("#posicionEditar").val();
-	});
+    window.location.href = "http://latitudmegalopolis.com/valores-publicidad-taurina?publicidadID=" + $("#posicionEditar").val();
+});
 </script>

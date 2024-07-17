@@ -10,8 +10,6 @@ $connection = dbConnection($db_config);
 if (!$connection) {
     header('Location: error.php');
 }
-$categoriasArre = getDataFromWhere($connection,"categorias_publicidad","status",201);
-$arrayNegocios = getDataFromLimit($connection,"pagina_publicidad","id",12);
 ?>
 
 <!DOCTYPE html>
@@ -70,8 +68,103 @@ $arrayNegocios = getDataFromLimit($connection,"pagina_publicidad","id",12);
    </header>
 <body>
     <div class="container">
-        <?php require 'banner-publicidad10.php'; ?>
-        <?php query_posts('category_name=latitud-taurina')?><!--Para elegir categoria en slider-->
+      <!--Banner de publicidad 19 Latitud taurina, se repetira mas abajo-->
+      <?php require 'banner-publicidad19.php'; ?>
+      <!--Espacio para primer carousel, el cual contendra las primeras 2 notas de latitud taurina y 1 publicidad de la base publicidad_taurina en la pocision 1 con estatus 200-->
+      <?php require 'carousel-taurina1.php'; ?>
+      <?php query_posts('category_name=deportes')?><!--Para elegir categoria en slider-->
+      <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 4) : the_post(); ?>
+      <!--Codigo que se ejecutara cuando encuentre algun post-->
+      <?php if ($i == 3): ?>
+         <div class="row margen-top">
+               <div class="col-12 col-md-6 h300">
+                  <a href="<?php the_permalink();?>">
+                  <img class="d-block full-img" src="
+                  <?php
+                     if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+                     the_post_thumbnail_url('full');
+                     }
+                  ?>">
+                  </a>
+               </div>
+               <div class="col-12 col-md-6 h300 borde-verde oculto-xs">
+                  <a href="<?php the_permalink();?>">
+                  <h1 class="text-left"><?php the_title(); ?></h1>
+                  </a>
+                  <p class="text-left"><?php $extracto = get_the_content() ;
+                  $extracto = strip_tags($extracto);
+                  echo substr($extracto, 0, 150); ?>
+                  <a href="<?php the_permalink();?>">...leer más.</a></p>
+               </div>
+               <div class="col-12 col-md-6 h300 borde-verde oculto-lg">
+                  <a href="<?php the_permalink();?>">
+                  <h1 class="text-center"><?php the_title(); ?></h1>
+                  </a>
+                  <p class="text-justify"><?php $extracto = get_the_content() ;
+                  $extracto = strip_tags($extracto);
+                  echo substr($extracto, 0, 150); ?>
+                  <a href="<?php the_permalink();?>">...leer más.</a></p>
+               </div>
+         </div>
+      <?php else: ?>
+
+      <?php endif; ?>
+      <?php $i++; endwhile; else: ?>
+      <!--Codigo que se ejecutara si no encuentra post-->
+      <h1>Error 404 no se encontraron portadas.</h1>
+      <?php endif; ?>
+      <?php wp_reset_query();?>
+
+      <div class="row margen-top">
+      <?php query_posts('category_name=deportes')?><!--Para elegir categoria en slider-->
+      <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 6) : the_post(); ?>
+      <!--Codigo que se ejecutara cuando encuentre algun post-->
+         <?php if ($i < 4): ?>
+
+         <?php else: ?>
+               <div class="col-12 col-md-6">
+                  <div class="h300">
+                  <a href="<?php the_permalink();?>">
+                     <img class="d-block full-img" src="
+                     <?php
+                           if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+                           the_post_thumbnail_url('full');
+                           }
+                     ?>">
+                  </a>
+                  </div>
+                  <div class="h300 borde-verde oculto-xs">
+                  <a href="<?php the_permalink();?>">
+                     <h1 class="text-right"><?php the_title(); ?></h1>
+                  </a>
+                  <p class="text-right"><?php $extracto = get_the_content() ;
+                  $extracto = strip_tags($extracto);
+                  echo substr($extracto, 0, 150); ?>
+                  <a href="<?php the_permalink();?>">...leer más.</a></p>
+                  </div>
+                  <div class="h300 borde-verde oculto-lg">
+                  <a href="<?php the_permalink();?>">
+                     <h1 class="text-center"><?php the_title(); ?></h1>
+                  </a>
+                  <p class="text-justify"><?php $extracto = get_the_content() ;
+                  $extracto = strip_tags($extracto);
+                  echo substr($extracto, 0, 150); ?>
+                  <a href="<?php the_permalink();?>">...leer más.</a></p>
+                  </div>
+               </div>
+         <?php endif; ?>
+      <?php $i++; endwhile; else: ?>
+      <!--Codigo que se ejecutara si no encuentra post-->
+      <h1>Error 404 no se encontraron portadas.</h1>
+      <?php endif; ?>
+      <?php wp_reset_query();?>
+      </div>
+      <!--Carousel exclusivo de publicidad de toros traido desde base de datos-->
+      <?php require 'carousel-taurina2.php'; ?>
+      <!--Banner de publicidad 19 Latitud taurina, se repetira mas abajo-->
+      <?php require 'banner-publicidad19.php'; ?>
+      <!--Seccion de latitud taurina-->
+      <?php query_posts('category_name=latitud-taurina')?><!--Para elegir categoria en slider-->
         <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 2) : the_post(); ?>
         <!--Codigo que se ejecutara cuando encuentre algun post-->
         <div class="row">
@@ -110,204 +203,7 @@ $arrayNegocios = getDataFromLimit($connection,"pagina_publicidad","id",12);
         <h1>Error 404 no se encontraron portadas.</h1>
         <?php endif; ?>
         <?php wp_reset_query();?>
-        <?php query_posts('category_name=deportes')?><!--Para elegir categoria en slider-->
-        <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 2) : the_post(); ?>
-        <!--Codigo que se ejecutara cuando encuentre algun post-->
-        <?php if ($i == 1): ?>
-            <div class="row margen-top">
-                <div class="col-12 col-md-6 h300">
-                    <a href="<?php the_permalink();?>">
-                    <img class="d-block full-img" src="
-                    <?php
-                        if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-                        the_post_thumbnail_url('full');
-                        }
-                    ?>">
-                    </a>
-                </div>
-                <div class="col-12 col-md-6 h300 borde-verde oculto-xs">
-                    <a href="<?php the_permalink();?>">
-                    <h1 class="text-left"><?php the_title(); ?></h1>
-                    </a>
-                    <p class="text-left"><?php $extracto = get_the_content() ;
-                    $extracto = strip_tags($extracto);
-                    echo substr($extracto, 0, 150); ?>
-                    <a href="<?php the_permalink();?>">...leer más.</a></p>
-                </div>
-                <div class="col-12 col-md-6 h300 borde-verde oculto-lg">
-                    <a href="<?php the_permalink();?>">
-                    <h1 class="text-center"><?php the_title(); ?></h1>
-                    </a>
-                    <p class="text-justify"><?php $extracto = get_the_content() ;
-                    $extracto = strip_tags($extracto);
-                    echo substr($extracto, 0, 150); ?>
-                    <a href="<?php the_permalink();?>">...leer más.</a></p>
-                </div>
-            </div>
-        <?php else: ?>
-
-        <?php endif; ?>
-        <?php $i++; endwhile; else: ?>
-        <!--Codigo que se ejecutara si no encuentra post-->
-        <h1>Error 404 no se encontraron portadas.</h1>
-        <?php endif; ?>
-        <?php wp_reset_query();?>
-
-        <div class="row margen-top">
-        <?php query_posts('category_name=deportes')?><!--Para elegir categoria en slider-->
-        <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 10) : the_post(); ?>
-        <!--Codigo que se ejecutara cuando encuentre algun post-->
-            <?php if ($i == 1): ?>
-
-            <?php else: ?>
-                <div class="col-12 col-md-6">
-                    <div class="h300">
-                    <a href="<?php the_permalink();?>">
-                        <img class="d-block full-img" src="
-                        <?php
-                            if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-                            the_post_thumbnail_url('full');
-                            }
-                        ?>">
-                    </a>
-                    </div>
-                    <div class="h300 borde-verde oculto-xs">
-                    <a href="<?php the_permalink();?>">
-                        <h1 class="text-right"><?php the_title(); ?></h1>
-                    </a>
-                    <p class="text-right"><?php $extracto = get_the_content() ;
-                    $extracto = strip_tags($extracto);
-                    echo substr($extracto, 0, 150); ?>
-                    <a href="<?php the_permalink();?>">...leer más.</a></p>
-                    </div>
-                    <div class="h300 borde-verde oculto-lg">
-                    <a href="<?php the_permalink();?>">
-                        <h1 class="text-center"><?php the_title(); ?></h1>
-                    </a>
-                    <p class="text-justify"><?php $extracto = get_the_content() ;
-                    $extracto = strip_tags($extracto);
-                    echo substr($extracto, 0, 150); ?>
-                    <a href="<?php the_permalink();?>">...leer más.</a></p>
-                    </div>
-                </div>
-            <?php endif; ?>
-        <?php $i++; endwhile; else: ?>
-        <!--Codigo que se ejecutara si no encuentra post-->
-        <h1>Error 404 no se encontraron portadas.</h1>
-        <?php endif; ?>
-        <?php wp_reset_query();?>
-        </div>
     </div> 
 </body>
 
 <?php get_footer(); ?>
-
-<?php
-function createAdvertising($num,$conn){
-   //Banner publicidad Latitud TV
-   $publicidad1 = getDataFromWhereX2($conn,"publicidad","posicion_publicidad",$num,"estatus_publicidad",200);
-   $tamPub1 = count($publicidad1);
-   $tamCont1 = $tamPub1 * 190;
-   $movCont1 = ($tamPub1 - 1) * 190;
-   $tamContSec1 = 100 / $tamPub1;
-   $tiempoAnim1 = $tamPub1 * 7;
-   echo '<style type="text/css">
-         .cont-publicidad-new{
-            height: 190px;
-            overflow: hidden;
-         }
-         @media (max-width: 768px) {
-            .cont-publicidad-new{
-            height: 80px;
-            }
-         }
-         </style>';
-   echo '<div class="margen-top cont-publicidad-new">
-            <style type="text/css">
-                  #sec-television{
-                        height: <?php echo $tamCont1; ?>px;
-                        animation-duration: '.$tiempoAnim1.'s;
-                        animation-name: carousel-publicidad1;
-                        animation-iteration-count: infinite;
-                        animation-timing-function: linear;
-                        animation-direction: normal;
-                  }
-                  .pub'.$num.'{
-                        height: '.$tamContSec1.'%;
-                        width: 100%;
-                  }
-                  .pub'.$num.' img{
-                        height: 100%;
-                        max-height: 190px;
-                        width: 100%;
-                  }
-                  @media (max-width: 768px) {
-                        #sec-television{
-                        height: '.($tamPub1 * 80).'px;
-                        animation-name: carousel-publicidad1xs;
-                        }
-                        .pub'.$num.'{
-                           height: '.$tamContSec1.'%;
-                           width: 100%;
-                        }
-                        .pub'.$num.' img{
-                           height: 90%;
-                           max-height: 80px;
-                           width: 97%;
-                        }
-                  }
-                  @keyframes carousel-publicidad'.$num.'{';
-                        for($i = 0; $i <= $tamPub1; $i++){
-                           if($i == 0){
-                              $porcTam1 = $i * $tamContSec1;
-                              $tamTam1 = $i * 190;
-                              echo $porcTam1.'%{margin-top:-'.$tamTam1.'px;}';
-                           }else if($i == $tamPub1){
-                              $porcTam1 = ($i * $tamContSec1)-1;
-                              $tamTam1 = ($i -1) * 190;
-                              echo $porcTam1.'%{margin-top:-'.$tamTam1.'px;}';
-                              echo '100%{margin-top:0px;}';
-                           }else{
-                              $porcTam1 = $i * $tamContSec1;
-                              $tamTam1 = ($i - 1) * 190;                        
-                              $porcTam1a = ($i * $tamContSec1) + 1;
-                              $tamTam1a = $i * 190;
-                              echo $porcTam1.'%{margin-top:-'.$tamTam1.'px;}';
-                              echo $porcTam1a.'%{margin-top:-'.$tamTam1a.'px;}';
-                           }
-                        }
-                  echo '}@keyframes carousel-publicidad'.$num.'xs{';
-                        for($i = 0; $i <= $tamPub1; $i++){
-                           if($i == 0){
-                              $porcTam1 = $i * $tamContSec1;
-                              $tamTam1 = $i * 80;
-                              echo $porcTam1.'%{margin-top:-'.$tamTam1.'px;}';
-                           }else if($i == $tamPub1){
-                              $porcTam1 = ($i * $tamContSec1)-1;
-                              $tamTam1 = ($i -1) * 80;
-                              echo $porcTam1.'%{margin-top:-'.$tamTam1.'px;}';
-                              echo '100%{margin-top:0px;}';
-                           }else{
-                              $porcTam1 = $i * $tamContSec1;
-                              $tamTam1 = ($i - 1) * 80;                        
-                              $porcTam1a = ($i * $tamContSec1) + 1;
-                              $tamTam1a = $i * 80;
-                              echo $porcTam1.'%{margin-top:-'.$tamTam1.'px;}';
-                              echo $porcTam1a.'%{margin-top:-'.$tamTam1a.'px;}';
-                           }
-                        }            
-                  echo '}
-                     </style>
-                     <div class="row margen-top" id="sec-television">';
-                        echo "";
-                        foreach($publicidad1 as $publicidad){
-                           echo '<div class="pub'.$num.'">
-                                    <a href="'.$publicidad['url_publicidad'].'">
-                                       <img src="'.$publicidad['img_publicidad'].'">
-                                    </a>
-                                 </div>';
-                        } 
-                     echo '</div>
-                  </div>';
-}
-?>

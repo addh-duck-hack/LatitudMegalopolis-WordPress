@@ -264,7 +264,72 @@ if ($_GET['keycode'] == "EDITPUBLICIDAD") {
   }
 }
 
+if ($_GET['keycode'] == "EDITPUBLICIDADTAURINA") {
+  if (isset($_GET['id']) && isset($_GET['estatus'])) {
+    $id = $_GET['id'];
+    $estatus = $_GET['estatus'];
+    $dia = date("d");
+    $mes = date("m");
+    $year = date("Y");
+    $fecha = $year . "-" . $mes . "-" . $dia;
+    $updatePublicidad = $connection->prepare("UPDATE publicidad SET estatus_publicidad = ".$estatus.", fecha = ".$fecha." WHERE id = ".$id);
+    $updatePublicidad->execute();
+    $idPublicidad = $updatePublicidad->rowCount();
+     if ($idPublicidad > 0) {
+        $array = array('Success' => true,'Mensaje' => "Se actualizo correctamente la publicidad.<br>Fecha de actualizacion: ".$fecha."<br>Identificador de publicidad: ".$id);
+       $json = json_encode($array);
+       print_r($json);
+     }else {
+         $array = array('Success' => false,'Mensaje' => "No edito nada o se pulso un boton incorrecto(ADP-002).");
+         $json = json_encode($array);
+         print_r($json);
+       }
+  }else {
+    $array = array('Success' => false,'Error' => "No se recibieron todos los datos para procesar la consulta.");
+    $json = json_encode($array);
+    print_r($json);
+  }
+}
 
+if ($_GET['keycode'] == "ADDPUBLICIDADTAURINA") {
+  if (isset($_GET['img']) && isset($_GET['posicion']) && isset($_GET['url'])) {
+    $urlImg = $_GET['img'];
+    $posicion = $_GET['posicion'];
+    $url = $_GET['url'];
+    $dia = date("d");
+    $mes = date("m");
+    $year = date("Y");
+    $fecha = $year . "-" . $mes . "-" . $dia;
+    $updatePublicidad = $connection->prepare("INSERT INTO publicidad_taurina (id, img, url, posicion, estatus, fecha) VALUES (null, :img, :url, :posicion, 200, :fecha)");
+    $updatePublicidad->execute(array(':img' => $urlImg,
+                                    ':url' => $url,
+                                    ':posicion' => $posicion,
+                                    ':fecha' => $fecha));
 
+    $idPublicidad = $connection->lastInsertId();
+    if ($idPublicidad > 0) {
+      switch ($posicion) {
+        case 1:
+          $posicionStr = "Carousel de notas + publicidad";
+          break;
+        case 2:
+          $posicionStr = "Carousel solo publicidad de toros";
+          break;
+      }
+
+      $array = array('Success' => true,'Mensaje' => "Se actualizo correctamente la publicidad en la seccion de ".$posicionStr.", ya se puede visualizar en la pagina principal.<br>Fecha de actualizacion: ".$fecha."<br>Identificador de publicidad: ".$idPublicidad);
+      $json = json_encode($array);
+      print_r($json);
+    }else {
+      $array = array('Success' => false,'Error' => "Hubo un error al subir la imagen intentelo de nuevo. Error(ADP-001).");
+      $json = json_encode($array);
+      print_r($json);
+    }
+  }else {
+    $array = array('Success' => false,'Error' => "No se recibieron todos los datos para procesar la consulta.");
+    $json = json_encode($array);
+    print_r($json);
+  }
+}
 
  ?>

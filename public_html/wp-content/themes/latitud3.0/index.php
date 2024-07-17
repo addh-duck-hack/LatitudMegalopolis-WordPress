@@ -116,28 +116,13 @@ Template Name: Pagina principal
    <?php require 'banner-publicidad3.php'; ?>
    <?php require 'estados.php'; ?>
    <?php require 'banner-publicidad13.php'; ?>
-   <?php query_posts('category_name=latitud-taurina')?><!--Para elegir categoria en slider-->
-   <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 2) : the_post(); ?>
-   <!--Codigo que se ejecutara cuando encuentre algun post-->
    <div class="row">
       <div class="col-12">
-            <div class="h400">
-               <a href="https://latitudmegalopolis.com/latitud-taurina/">
-               <img class="d-block full-img" src="
-               <?php
-                  if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-                  the_post_thumbnail_url('full');
-                  }
-               ?>">
-               </a>
-            </div>
+         <a href="https://latitudmegalopolis.com/latitud-taurina/">
+            <img class="d-block full-img" src="<?php bloginfo('template_url'); ?>/resources/lat-taurina.jpeg">
+         </a>
       </div>
    </div>
-   <?php $i++; endwhile; else: ?>
-   <!--Codigo que se ejecutara si no encuentra post-->
-   <h1>Error 404 no se encontraron portadas.</h1>
-   <?php endif; ?>
-   <?php wp_reset_query();?>
    <?php require 'banner-publicidad4.php'; ?>
    <div class="row margen-top">
       <div class="col-12 col-md-9">
