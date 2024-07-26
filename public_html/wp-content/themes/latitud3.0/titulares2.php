@@ -232,7 +232,6 @@
    <?php wp_reset_query();?>
 </div>
 <?php require 'banner-publicidad10.php'; ?>
-
 <?php query_posts('category_name=deportes2')?><!--Para elegir categoria en slider-->
 <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 2) : the_post(); ?>
 <!--Codigo que se ejecutara cuando encuentre algun post-->

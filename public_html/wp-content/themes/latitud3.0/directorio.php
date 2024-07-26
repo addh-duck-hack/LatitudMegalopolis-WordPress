@@ -7,7 +7,7 @@ Template Name: Pagina Directorio
    <div class="container">
       <div class="row justify-content-center">
          <div class="col-8 col-md-6">
-            <img src="https://latitudmegalopolis-com.digitalserver.io/wp-content/themes/latitud3.0/resources/logo_transparente.png" alt="" class="full-img">
+            <img src="https://latitudmegalopolis-com.digitalserver.io/wp-content/themes/latitud3.0/resources/logo_nuevo2.png" alt="" class="full-img">
          </div>
       </div>
       <div class="row">

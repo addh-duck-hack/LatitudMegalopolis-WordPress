@@ -16,28 +16,19 @@ $carousel1 = getDataFromWhereX2($connection,"publicidad_taurina","posicion",1,"e
   <div class="carousel-inner">
      <?php query_posts('category_name=deportes')?><!--Para elegir categoria en slider-->
      <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 4) : the_post(); ?>
-        <?php if ($i < 3): ?>
-            <!--Codigo que se ejecutara cuando encuentre algun post-->
-            <div class="carousel-item <?php if (($i-1) == 0): ?>
-                active
-            <?php endif; ?>">
-                <a href="<?php the_permalink();?>">
-                <img class="d-block w-100" src="
-                <?php
-                if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-                    the_post_thumbnail_url('full');
-                }
-                ?>">
-                </a>
-            </div>
-        <?php else: ?>
-            <!--Codigo que se ejecutara cuando encuentre algun post-->
-            <div class="carousel-item"  style="background: black;">
-                <a href="<?php echo $carousel1[0]['url'];?>">
-                <img class="d-block" src="<?php echo $carousel1[0]['img'] ?>" style="height: 39em;margin: auto;">
-                </a>
-            </div>
-        <?php endif; ?>
+        <!--Codigo que se ejecutara cuando encuentre algun post-->
+        <div class="carousel-item <?php if (($i-1) == 0): ?>
+            active
+        <?php endif; ?>">
+            <a href="<?php the_permalink();?>">
+            <img class="d-block w-100" src="
+            <?php
+            if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+                the_post_thumbnail_url('full');
+            }
+            ?>">
+            </a>
+        </div>
     <?php $i++; endwhile; else: ?>
     <!--Codigo que se ejecutara si no encuentra post-->
     <h1>Error 404 no se encontraron portadas.</h1>

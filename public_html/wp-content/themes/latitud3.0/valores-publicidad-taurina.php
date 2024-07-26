@@ -40,6 +40,7 @@ if ($publicidadID > 0) {
                        <option value="0" selected>Posición publicidad</option>
                        <option value="1">Carousel de notas + publicidad</option>
                        <option value="2">Carousel solo publicidad de toros</option>
+                       <option value="3">Galería taurina de mir</option>
                    </select><br><br>
                    <label for="valorImg">URL de la imagen publicidad</label>
                    <input type="text" class="form-control" id="valorImg" style="width:80%;" placeholder="https://latitudmegalopolis.com/wp-content/uploads/2019/07/IMG-20190727-WA0001.jpg">
@@ -83,9 +84,12 @@ if ($publicidadID > 0) {
                 <option value="1" <?php if ($publicidadID == 1) {
                    echo "selected";
                 } ?>>Carousel de notas + publicidad</option>
-                <option value="2" <?php if ($publicidadID == 1) {
+                <option value="2" <?php if ($publicidadID == 2) {
                    echo "selected";
                 } ?>>Carousel solo publicidad de toros</option>
+                <option value="3" <?php if ($publicidadID == 3) {
+                   echo "selected";
+                } ?>>Galería taurina de mir</option>
             </select>
             <div id="respuestaEdit"></div>
             <br><br>

@@ -73,9 +73,9 @@ if (!$connection) {
       <!--Espacio para primer carousel, el cual contendra las primeras 2 notas de latitud taurina y 1 publicidad de la base publicidad_taurina en la pocision 1 con estatus 200-->
       <?php require 'carousel-taurina1.php'; ?>
       <?php query_posts('category_name=deportes')?><!--Para elegir categoria en slider-->
-      <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 4) : the_post(); ?>
+      <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 5) : the_post(); ?>
       <!--Codigo que se ejecutara cuando encuentre algun post-->
-      <?php if ($i == 3): ?>
+      <?php if ($i == 4): ?>
          <div class="row margen-top">
                <div class="col-12 col-md-6 h300">
                   <a href="<?php the_permalink();?>">
@@ -117,9 +117,9 @@ if (!$connection) {
 
       <div class="row margen-top">
       <?php query_posts('category_name=deportes')?><!--Para elegir categoria en slider-->
-      <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 6) : the_post(); ?>
+      <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 7) : the_post(); ?>
       <!--Codigo que se ejecutara cuando encuentre algun post-->
-         <?php if ($i < 4): ?>
+         <?php if ($i < 5): ?>
 
          <?php else: ?>
                <div class="col-12 col-md-6">
@@ -161,48 +161,97 @@ if (!$connection) {
       </div>
       <!--Carousel exclusivo de publicidad de toros traido desde base de datos-->
       <?php require 'carousel-taurina2.php'; ?>
+      <div class="row margen-top">
+      <?php query_posts('category_name=deportes')?><!--Para elegir categoria en slider-->
+      <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 11) : the_post(); ?>
+      <!--Codigo que se ejecutara cuando encuentre algun post-->
+         <?php if ($i < 7): ?>
+
+         <?php else: ?>
+               <div class="col-12 col-md-6">
+                  <div class="h300">
+                  <a href="<?php the_permalink();?>">
+                     <img class="d-block full-img" src="
+                     <?php
+                           if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+                           the_post_thumbnail_url('full');
+                           }
+                     ?>">
+                  </a>
+                  </div>
+                  <div class="h300 borde-verde oculto-xs">
+                  <a href="<?php the_permalink();?>">
+                     <h1 class="text-right"><?php the_title(); ?></h1>
+                  </a>
+                  <p class="text-right"><?php $extracto = get_the_content() ;
+                  $extracto = strip_tags($extracto);
+                  echo substr($extracto, 0, 150); ?>
+                  <a href="<?php the_permalink();?>">...leer más.</a></p>
+                  </div>
+                  <div class="h300 borde-verde oculto-lg">
+                  <a href="<?php the_permalink();?>">
+                     <h1 class="text-center"><?php the_title(); ?></h1>
+                  </a>
+                  <p class="text-justify"><?php $extracto = get_the_content() ;
+                  $extracto = strip_tags($extracto);
+                  echo substr($extracto, 0, 150); ?>
+                  <a href="<?php the_permalink();?>">...leer más.</a></p>
+                  </div>
+               </div>
+         <?php endif; ?>
+      <?php $i++; endwhile; else: ?>
+      <!--Codigo que se ejecutara si no encuentra post-->
+      <h1>Error 404 no se encontraron portadas.</h1>
+      <?php endif; ?>
+      <?php wp_reset_query();?>
+      </div>
+      <!--Carousel estatico con 5 fotos que no se modificaran-->
+      <div class="col-12 borde-verde" style="color:green;margin-top:2em;">
+         <h1 class="text-center">LA GALERÍA TAURINA DE MIR</h1>
+      </div>
+      <?php require 'carousel-taurina3.php'; ?>
       <!--Banner de publicidad 19 Latitud taurina, se repetira mas abajo-->
       <?php require 'banner-publicidad19.php'; ?>
       <!--Seccion de latitud taurina-->
       <?php query_posts('category_name=latitud-taurina')?><!--Para elegir categoria en slider-->
-        <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 2) : the_post(); ?>
-        <!--Codigo que se ejecutara cuando encuentre algun post-->
-        <div class="row">
-            <div class="col-12">
-                <div class="h400">
-                    <a href="<?php the_permalink();?>">
-                    <img class="d-block full-img" src="
-                    <?php
-                        if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-                        the_post_thumbnail_url('full');
-                        }
-                    ?>">
-                    </a>
-                </div>
-            </div>
-            <div class="col-12 borde-verde">
-                <a href="<?php the_permalink();?>">
-                    <h1 class="text-center"><?php the_title(); ?></h1>
-                </a>
-                <div class="col-12 oculto-xs">
-                <p class="text-center" style="font-size: 25px;"><?php $extracto = get_the_content() ;
-                $extracto = strip_tags($extracto);
-                echo substr($extracto, 0, 150); ?>
-                <a href="<?php the_permalink();?>" style="color: green;">...leer más.</a></p>
-            </div>
-            <div class="col-12 h400 oculto-lg">
-                <p class="text-justify"><?php $extracto = get_the_content() ;
-                $extracto = strip_tags($extracto);
-                echo substr($extracto, 0, 150); ?>
-                <a href="<?php the_permalink();?>">...leer más.</a></p>
-            </div>
-            </div>
-        </div>
-        <?php $i++; endwhile; else: ?>
-        <!--Codigo que se ejecutara si no encuentra post-->
-        <h1>Error 404 no se encontraron portadas.</h1>
-        <?php endif; ?>
-        <?php wp_reset_query();?>
+      <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 2) : the_post(); ?>
+      <!--Codigo que se ejecutara cuando encuentre algun post-->
+      <div class="row">
+         <div class="col-12">
+               <div class="h400">
+                  <a href="<?php the_permalink();?>">
+                  <img class="d-block full-img" src="
+                  <?php
+                     if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+                     the_post_thumbnail_url('full');
+                     }
+                  ?>">
+                  </a>
+               </div>
+         </div>
+         <div class="col-12 borde-verde">
+               <a href="<?php the_permalink();?>">
+                  <h1 class="text-center"><?php the_title(); ?></h1>
+               </a>
+               <div class="col-12 oculto-xs">
+               <p class="text-center" style="font-size: 25px;"><?php $extracto = get_the_content() ;
+               $extracto = strip_tags($extracto);
+               echo substr($extracto, 0, 150); ?>
+               <a href="<?php the_permalink();?>" style="color: green;">...leer más.</a></p>
+         </div>
+         <div class="col-12 h400 oculto-lg">
+               <p class="text-justify"><?php $extracto = get_the_content() ;
+               $extracto = strip_tags($extracto);
+               echo substr($extracto, 0, 150); ?>
+               <a href="<?php the_permalink();?>">...leer más.</a></p>
+         </div>
+         </div>
+      </div>
+      <?php $i++; endwhile; else: ?>
+      <!--Codigo que se ejecutara si no encuentra post-->
+      <h1>Error 404 no se encontraron portadas.</h1>
+      <?php endif; ?>
+      <?php wp_reset_query();?>
     </div> 
 </body>
 

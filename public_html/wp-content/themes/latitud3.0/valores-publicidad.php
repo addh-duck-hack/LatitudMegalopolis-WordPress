@@ -97,7 +97,7 @@ if ($publicidadID > 0) {
                 <option value="0" <?php if ($publicidadID == 0 || !isset($publicidadID)) {
                    echo "selected";
                 } ?>>Posición publicidad</option>
-                <option value="11" <?php if ($publicidadID == 1) {
+                <option value="11" <?php if ($publicidadID == 11) {
                    echo "selected";
                 } ?>>Principal</option>
                 <option value="1" <?php if ($publicidadID == 1) {
@@ -133,24 +133,27 @@ if ($publicidadID > 0) {
                 <option value="12" <?php if ($publicidadID == 12) {
                    echo "selected";
                 } ?>>Cocina</option>
-                <option value="13" <?php if ($publicidadID == 12) {
+                <option value="13" <?php if ($publicidadID == 13) {
                    echo "selected";
                 } ?>>Negocios</option>
-                <option value="14" <?php if ($publicidadID == 12) {
+                <option value="14" <?php if ($publicidadID == 14) {
                    echo "selected";
                 } ?>>Publicidad 1</option>
-                <option value="15" <?php if ($publicidadID == 12) {
+                <option value="15" <?php if ($publicidadID == 15) {
                    echo "selected";
                 } ?>>Publicidad 2</option>
-                <option value="16" <?php if ($publicidadID == 12) {
+                <option value="16" <?php if ($publicidadID == 16) {
                    echo "selected";
                 } ?>>Publicidad 3</option>
-                <option value="17" <?php if ($publicidadID == 12) {
+                <option value="17" <?php if ($publicidadID == 17) {
                    echo "selected";
                 } ?>>Publicidad 4</option>
-                <option value="18" <?php if ($publicidadID == 12) {
+                <option value="18" <?php if ($publicidadID == 18) {
                    echo "selected";
                 } ?>>Publicidad 5</option>
+                <option value="19" <?php if ($publicidadID == 19) {
+                   echo "selected";
+                } ?>>Latitud Taurina</option>
             </select>
             <div id="respuestaEdit"></div>
             <br><br>

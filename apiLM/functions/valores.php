@@ -272,7 +272,7 @@ if ($_GET['keycode'] == "EDITPUBLICIDADTAURINA") {
     $mes = date("m");
     $year = date("Y");
     $fecha = $year . "-" . $mes . "-" . $dia;
-    $updatePublicidad = $connection->prepare("UPDATE publicidad SET estatus_publicidad = ".$estatus.", fecha = ".$fecha." WHERE id = ".$id);
+    $updatePublicidad = $connection->prepare("UPDATE publicidad_taurina SET estatus = ".$estatus.", fecha = ".$fecha." WHERE id = ".$id);
     $updatePublicidad->execute();
     $idPublicidad = $updatePublicidad->rowCount();
      if ($idPublicidad > 0) {
