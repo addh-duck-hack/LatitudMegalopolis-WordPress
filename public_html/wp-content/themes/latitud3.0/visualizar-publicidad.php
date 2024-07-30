@@ -39,7 +39,7 @@ $arrayNegocios = getDataFromLimit($connection,"pagina_publicidad","id",12);
          <div class="row justify-content-center">
             <div class="col-7 col-md-4 margen-top" style="margin-bottom: 10px;">
                <a href="https://latitudmegalopolis.com/">
-                  <img class="full-img" src="https://latitudmegalopolis-com.digitalserver.io/wp-content/themes/latitud3.0/resources/logo_nuevo2.png" alt="">
+                  <img class="full-img" src="https://latitudmegalopolis-com.digitalserver.io/wp-content/themes/latitud3.0/resources/logo_nuevo3.png" alt="">
                </a>
             </div>
             <!-- <div class="col-4">

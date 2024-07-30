@@ -8,7 +8,7 @@
             <p>Este material cuenta con derechos de propiedad intelectual. De no existir previa autorización por escrito de LATITUD MEGALÓPOLIS © <?php echo date("Y") ?>, Compañía periodística, queda expresamente prohibida la publicación, retransmisión, distribución, venta, edición y cualquier otro uso de los contenidos.</p>
          </div>
          <div class="col-2 oculto-xs">
-            <img class="full-img-fo" src="<?php bloginfo('template_url'); ?>/resources/logo_nuevo2.png" alt="">
+            <img class="full-img-fo" src="<?php bloginfo('template_url'); ?>/resources/logo_nuevo3.png" alt="">
          </div>
       </div>
     </div>
