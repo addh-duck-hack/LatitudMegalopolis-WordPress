@@ -36,8 +36,8 @@ if (!$connection) {
       <div class="container">
          <div class="row justify-content-center">
             <div class="col-7 col-md-4 margen-top" style="margin-bottom: 10px;">
-               <a href="https://latitudmegalopolis.com/latitud-taurina/">
-                  <img class="full-img" src="https://latitudmegalopolis-com.digitalserver.io/wp-content/themes/latitud3.0/resources/latitud_taurina3.jpg" alt="">
+               <a href="https://latitudmegalopolis.com/latitud-hidalgo/">
+                  <img class="full-img" src="<?php bloginfo('template_url'); ?>/resources/latitud_hidalgo.jpg" alt="">
                </a>
             </div>
             <!-- <div class="col-4">
@@ -45,7 +45,7 @@ if (!$connection) {
             </div> -->
          </div>
          <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-principal">
-            <a class="navbar-brand" href="#">Director Carlos Yarza</a>
+            <!-- <a class="navbar-brand" href="#">Director Carlos Yarza</a> -->
            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
              <span class="navbar-toggler-icon"></span>
            </button>
@@ -205,10 +205,11 @@ if (!$connection) {
       <?php endif; ?>
       <?php wp_reset_query();?>
       </div>
-      <!--Carousel estatico con 5 fotos que no se modificaran-->
-      <div class="col-12 borde-verde" style="color:green;margin-top:2em;">
-         <h1 class="text-center">LA GALERÍA TAURINA DE MIR</h1>
+      <!--Imagen de banner nueva-->
+      <div class="col-12" style="padding: 0;">
+         <img src="<?php bloginfo('template_url'); ?>/resources/cronista_hidalgo.jpg" alt="" style="width:100%">
       </div>
+      <!--Carousel estatico con 5 fotos que no se modificaran-->
       <?php require 'carousel-taurina3.php'; ?>
       <!--Banner de publicidad 19 Latitud taurina, se repetira mas abajo-->
       <?php require 'banner-publicidad19.php'; ?>

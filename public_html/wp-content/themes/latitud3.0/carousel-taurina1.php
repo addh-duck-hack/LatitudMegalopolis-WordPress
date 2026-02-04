@@ -1,7 +1,3 @@
-<?php
-//Se obtienen los datos de la base
-$carousel1 = getDataFromWhereX2($connection,"publicidad_taurina","posicion",1,"estatus",200);
-?>
 <div id="carousel1" class="carousel slide carousel-fade" data-ride="carousel">
    <ol class="carousel-indicators hidden-xs">
       <?php query_posts('category_name=deportes')?><!--Para elegir categoria en slider-->

@@ -56,9 +56,10 @@ Template Name: Pagina principal
       <?php require 'columnistas.php'; ?>
    </div>
    <div class="row margen-top">
-     <div class="col-12 text-center borde-lima">
-       <h1>ALCALDÍAS</h1>
-     </div>
+     <!--Imagen de banner nueva-->
+     <div class="col-12">
+         <img src="<?php bloginfo('template_url'); ?>/resources/diarios_ciudad.jpg" alt="" style="width:100%">
+      </div>
    </div>
    <div class="row margen-top">
       <div class="col-12">
@@ -106,11 +107,6 @@ Template Name: Pagina principal
          </div>
       </div>
    </div>
-	<!-- <div class="row margen-top oculto-lg">
-	<div class="col-11 marco contador" style="padding-left: 15px; padding-right: 15px;">
-         <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar ( 'SidebarContador' ) ) : endif; ?>
-      </div>
-	</div> -->
    <?php require 'banner-publicidad2.php'; ?>
    <?php require 'titulares.php'; ?>
    <?php require 'banner-publicidad3.php'; ?>
@@ -119,7 +115,7 @@ Template Name: Pagina principal
    <div class="row">
       <div class="col-12">
          <a href="https://latitudmegalopolis.com/latitud-taurina/">
-            <img class="d-block full-img" src="<?php bloginfo('template_url'); ?>/resources/lat-taurina.jpeg">
+            <img class="d-block full-img" src="<?php bloginfo('template_url'); ?>/resources/lat-taurina-jpeg">
          </a>
       </div>
    </div>

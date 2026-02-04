@@ -1,6 +1,7 @@
 <?php
 //Se obtienen los datos de la base
 $carousel3 = getDataFromWhereX2($connection,"publicidad_taurina","posicion",3,"estatus",200);
+echo '<!--'.$carousel2.'-->';
 ?>
 <br>
 <div id="carousel3" class="carousel slide carousel-fade" data-ride="carousel" style="margin-top:-1em;">
