@@ -36,8 +36,8 @@ if (!$connection) {
       <div class="container">
          <div class="row justify-content-center">
             <div class="col-7 col-md-4 margen-top" style="margin-bottom: 10px;">
-               <a href="https://latitudmegalopolis.com/latitud-hidalgo/">
-                  <img class="full-img" src="<?php bloginfo('template_url'); ?>/resources/latitud_hidalgo.jpg" alt="">
+               <a href="https://latitudmegalopolis.com/latitud-taurina/">
+                  <img class="full-img" src="<?php bloginfo('template_url'); ?>/resources/latitud_taurina_nuevo1.png" alt="">
                </a>
             </div>
             <!-- <div class="col-4">

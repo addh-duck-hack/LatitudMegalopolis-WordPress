@@ -115,7 +115,7 @@ Template Name: Pagina principal
    <div class="row">
       <div class="col-12">
          <a href="https://latitudmegalopolis.com/latitud-taurina/">
-            <img class="d-block full-img" src="<?php bloginfo('template_url'); ?>/resources/lat-taurina-jpeg">
+            <img class="d-block full-img" src="<?php bloginfo('template_url'); ?>/resources/lat-taurina.jpeg">
          </a>
       </div>
    </div>
