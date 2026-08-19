@@ -51,6 +51,8 @@
 	</div>
 </div>
 
+<?php require 'banner-peajesmx.php'; ?>
+
 <?php query_posts('category_name=titulares')?><!--Para elegir categoria en slider-->
 <?php $i = 1; if ( have_posts() ) : while ( have_posts() && $i < 17) : the_post(); ?>
 <!--Codigo que se ejecutara cuando encuentre algun post-->
